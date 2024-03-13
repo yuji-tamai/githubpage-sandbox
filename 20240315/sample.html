@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Sample</title>
+    <script src="https://cdn.jsdelivr.net/npm/ruby-3_2-wasm-wasi@1.0.1/dist/browser.script.iife.js"></script>
+    <script type="text/ruby">
+      require 'js'
+
+      now = Time.now.strftime('%Y-%m-%d %H:%M:%S.%L')
+      puts "Hello, world! to console_log #{now}"
+      output = JS.global[:document].getElementById("output")
+      output[:innerHTML] = "Hello, world! to html #{now}"
+    </script>
+  </head>
+  <body>
+    <h1>Sample</h1>
+    <hr />
+    <div id="output"></div>
+  </body>
+</html>
