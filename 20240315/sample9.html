@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Sample9</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/ruby-3_2-wasm-wasi@1.0.1/dist/browser.script.iife.js"></script>
+    <script type="text/ruby" src="sample9.rb"></script>
+  </head>
+  <body>
+    <h1>Sample9 Ruby executer</h1>
+    <hr />
+    <textarea id="rubyCode" rows="8" cols="50">
+result = 0
+(1..10).each do |i|
+  result += i
+end
+result
+    </textarea>
+    <button id="executeButton">Run</button>
+    <div id="output"></div>
+  </body>
+</html>
