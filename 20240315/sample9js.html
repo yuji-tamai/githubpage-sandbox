@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1からnまでの和を計算</title>
+</head>
+<body>
+    <h1>1からnまでの和を計算</h1>
+    <form id="sumForm">
+        <label for="numberInput">数字を入力してください：</label>
+        <input type="number" id="numberInput" min="1" required>
+        <button type="button" onclick="calculateSum()">計算</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateSum() {
+            const startTime = performance.now();
+
+            const n = parseInt(document.getElementById("numberInput").value);
+            let sum = 0;
+            for (let i = 1; i <= n; i++) {
+                sum += i;
+            }
+
+            const endTime = performance.now();
+            const elapsedTime = endTime - startTime;
+
+            document.getElementById("result").textContent = `1から${n}までの和: ${sum}`;
+            document.getElementById("result").insertAdjacentHTML("beforeend", `<br>計算にかかった時間: ${elapsedTime.toFixed(2)}ミリ秒`);
+        }
+    </script>
+</body>
+</html>
