@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1からnまでの和を計算</title>
+</head>
+<body>
+    <h1>1からnまでの和を計算</h1>
+    <form id="sumForm">
+        <label for="numberInput">数字を入力してください：</label>
+        <input type="number" id="numberInput" min="1" required>
+        <button type="button" onclick="calculateSum()">計算</button>
+    </form>
+    <p id="result"></p>
+
+    <script src="wasm_exec.js"></script>
+    <script>
+        const runWasm = async () => {
+            const go = new Go();
+            const wasm = await WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject);
+            go.run(wasm.instance);
+        };
+
+        const calculateSum = () => {
+            const n = parseInt(document.getElementById("numberInput").value);
+            const start = performance.now();
+            const result = window.addNumbers(n);
+            const end = performance.now();
+            const elapsedTime = end - start;
+
+            document.getElementById("result").textContent = `1から${n}までの和: ${result}`;
+            document.getElementById("result").insertAdjacentHTML("beforeend", `<br>計算にかかった時間: ${elapsedTime.toFixed(2)}ミリ秒`);
+        };
+
+        runWasm();
+    </script>
+</body>
+</html>
