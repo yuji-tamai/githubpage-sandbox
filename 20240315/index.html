@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Sample list</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/ruby-3_2-wasm-wasi@1.0.1/dist/browser.script.iife.js"></script>
+    <script type="text/ruby">
+      require 'js'
+
+      pages = [
+        { title: "Sample1", path: "sample.html" },
+        { title: "Sample2 rubyを別ファイルに", path: "sample2.html" },
+        { title: "Sample3 擬似変数出してみた", path: "sample3.html" },
+        { title: "Sample4 ファイル一覧取れる？", path: "sample4.html" },
+        { title: "Sample5 loop and sleep", path: "sample5.html" },
+        { title: "Sample6 loop and sleep by setInterval", path: "sample6.html" },
+        { title: "Sample7 Fiber", path: "sample7.html" },
+        { title: "Sample8 HTTP Request", path: "sample8.html" },
+        { title: "Sample9 Ruby executer", path: "sample9.html" },
+        { title: "Sample9 by javascript", path: "sample9js.html" },
+      ]
+      output = JS.global[:document].getElementById("output")
+
+      pages.each do |page|
+        output.appendChild(JS.global[:document].createElement("a")).tap do |a|
+          a[:href] = page[:path]
+          a[:innerHTML] = page[:title]
+          a[:style][:display] = "block"
+        end
+      end
+      output[:innerHTML] = "Hello, world! to html #{now}"
+    </script>
+  </head>
+  <body>
+    <h1>Sample list</h1>
+    <hr />
+    <div id="output"></div>
+  </body>
+</html>
