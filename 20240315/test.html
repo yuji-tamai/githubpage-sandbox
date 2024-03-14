@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1から10,000,000までの計算</title>
+</head>
+<body>
+    <h1>1から10,000,000までの合計</h1>
+    <p id="result"></p>
+
+    <script>
+        const startTime = performance.now();
+
+        // 1から10までの数値を計算
+        let sum = 0;
+        for (let i = 1; i <= 10000000; i++) {
+            sum += i;
+        }
+
+        const endTime = performance.now();
+        const elapsedTime = endTime - startTime;
+
+        // 結果を表示
+        document.getElementById("result").textContent = `1から10,000,000までの合計: ${sum}`;
+        document.getElementById("result").insertAdjacentHTML("beforeend", `<br>計算にかかった時間: ${elapsedTime.toFixed(0)}ミリ秒`);
+    </script>
+</body>
+</html>

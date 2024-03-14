@@ -28,7 +28,7 @@
             const elapsedTime = endTime - startTime;
 
             document.getElementById("result").textContent = `1から${n}までの和: ${sum}`;
-            document.getElementById("result").insertAdjacentHTML("beforeend", `<br>計算にかかった時間: ${elapsedTime.toFixed(2)}ミリ秒`);
+            document.getElementById("result").insertAdjacentHTML("beforeend", `<br>計算にかかった時間: ${elapsedTime.toFixed(0)}ミリ秒`);
         }
     </script>
 </body>

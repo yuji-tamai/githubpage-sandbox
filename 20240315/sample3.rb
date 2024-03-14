@@ -10,7 +10,7 @@ def output_html(message)
   output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML(message)}<br>"
 end
 
-output_html "__FILE__ = [#{__FILE__.inspect}]"
-output_html "__dir__ = [#{__dir__.inspect}]"
-output_html "__LINE__ = [#{__LINE__.inspect}]"
-output_html "__ENCODING__ = [#{__ENCODING__.inspect}]"
+output_html "__FILE__ = #{__FILE__.inspect}"
+output_html "__dir__ = #{__dir__.inspect}"
+output_html "__LINE__ = #{__LINE__.inspect}"
+output_html "__ENCODING__ = #{__ENCODING__.inspect}"
