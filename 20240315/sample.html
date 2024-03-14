@@ -7,7 +7,11 @@
       require 'js'
 
       now = Time.now.strftime('%Y-%m-%d %H:%M:%S.%L')
+
+      # putsはconsole.logに出力される
       puts "Hello, world! to console_log #{now}"
+
+      # JS.global[:document]でDOMにアクセスできる
       output = JS.global[:document].getElementById("output")
       output[:innerHTML] = "Hello, world! to html #{now}"
     </script>

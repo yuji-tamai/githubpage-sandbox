@@ -20,4 +20,5 @@ render = ->() {
   counter += 1
 }
 
+# JavascriptのsetIntervalにrenderのprocを渡す
 JS.global.call(:setInterval, JS.try_convert(render), 1000)

@@ -10,6 +10,7 @@ def output_html(message)
   output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML(message)}<br>"
 end
 
+# カレントディレクトリのファイル一覧
 Dir.foreach(__dir__) do |file|
   output_html file
 end
