@@ -1,3 +1,4 @@
+# 5) Loop処理
 require 'js'
 require "cgi"
 

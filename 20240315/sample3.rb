@@ -1,3 +1,4 @@
+# 3) 擬似変数出してみた
 require 'js'
 require "cgi"
 

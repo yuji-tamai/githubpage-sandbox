@@ -1,3 +1,4 @@
+# 2) rubyを外部ファイルにする
 require 'js'
 
 now = Time.now.strftime('%Y-%m-%d %H:%M:%S.%L')

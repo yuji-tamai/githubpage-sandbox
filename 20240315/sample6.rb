@@ -1,3 +1,4 @@
+# 6) setIntervalに関数渡す
 require 'js'
 require "cgi"
 

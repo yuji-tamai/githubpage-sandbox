@@ -1,3 +1,4 @@
+# 4) ファイル操作したらどうなる？
 require 'js'
 require "cgi"
 

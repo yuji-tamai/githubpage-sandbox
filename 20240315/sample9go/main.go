@@ -4,6 +4,7 @@ import (
 	"syscall/js"
 )
 
+// 1からp[0]までの和を計算
 func addNumbers(this js.Value, p []js.Value) interface{} {
 	n := p[0].Int()
 	sum := 0

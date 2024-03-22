@@ -1,3 +1,4 @@
+# 8) HTTP Requestできる？
 require 'js'
 require "cgi"
 
