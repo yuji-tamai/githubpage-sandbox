@@ -10,16 +10,21 @@ def document
   @document ||= JS.global[:document]
 end
 
+def clear_html
+  output = document.getElementById("output")
+  output[:innerHTML] = ""
+end
+
 def output_html(message)
   output = document.getElementById("output")
   output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML(message)}<br>"
 end
 
 def execute
-  counter = 0
+  counter = 1
   render = ->() {
     # clearIntervalの仕方がわからん
-    return if counter >= 100
+    return if counter > 101
 
     console_log "loop #{counter}"
     output_html "loop #{counter}"
