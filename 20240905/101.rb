@@ -25,7 +25,7 @@ def output_html
   if rand(100) <= 6.3
     output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[お見合い成立]")}"
   else
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[お見合い不成立]")}<br>"
+    output[:innerHTML] = "#{CGI.escapeHTML(output[:innerHTML])}#{CGI.escapeHTML("[お見合い不成立]")}<br>"
     return
   end
 
