@@ -23,30 +23,30 @@ def output_html
   output = document.getElementById("output")
 
   if rand(100) <= 6.3
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[お見合い成立]")}"
+    output[:innerHTML] = "#{output[:innerHTML]}[1ok]"
   else
-    output[:innerHTML] = "#{CGI.escapeHTML(output[:innerHTML])}#{CGI.escapeHTML("[お見合い不成立]")}<br>"
+    output[:innerHTML] = "#{output[:innerHTML]}[1ng]<br>"
     return
   end
 
   if rand(100) <= 34.0
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[仮交際成立]")}"
+    output[:innerHTML] = "#{output[:innerHTML]}[2on]"
   else
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[仮交際不成立]")}<br>"
+    output[:innerHTML] = "#{output[:innerHTML]}[2ng]<br>"
     return
   end
 
   if rand(100) <= 9.6
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[真剣交際成立]")}"
+    output[:innerHTML] = "#{output[:innerHTML]}[3ok]"
   else
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[仮交際不成立]")}<br>"
+    output[:innerHTML] = "#{output[:innerHTML]}[3ng]<br>"
     return
   end
 
   if rand(100) <= 59.8
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[成婚成立]")}<br>"
+    output[:innerHTML] = "#{output[:innerHTML]}[4ok]<br>"
   else
-    output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML("[成婚不成立]")}<br>"
+    output[:innerHTML] = "#{output[:innerHTML]}[4ng]<br>"
   end
 
 end
