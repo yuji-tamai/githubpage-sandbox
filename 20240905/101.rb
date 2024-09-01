@@ -33,6 +33,5 @@ end
 button = document.getElementById('executeButton')
 
 button.addEventListener 'click' do |_e|
-  ruby_code = document.getElementById('rubyCode')[:value].to_s
-  execute_ruby_code(ruby_code)
+  execute()
 end
