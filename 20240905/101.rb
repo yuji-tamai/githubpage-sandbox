@@ -11,6 +11,10 @@ def output_html(message)
   output[:innerHTML] = "#{output[:innerHTML]}#{CGI.escapeHTML(message)}<br>"
 end
 
+def document
+  @document ||= JS.global[:document]
+end
+
 def execute
   counter = 0
   render = ->() {
