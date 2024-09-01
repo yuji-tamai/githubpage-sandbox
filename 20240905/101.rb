@@ -19,7 +19,7 @@ end
 # 仮交際成立 34.9%
 # 交際成立 9.6%
 # 結婚成立 59.8%
-def output_html(message)
+def output_html
   output = document.getElementById("output")
 
   if rand(100) <= 6.3
@@ -59,7 +59,7 @@ def execute
     return if counter > 101
 
     console_log "loop #{counter}"
-    output_html "loop #{counter}"
+    output_html
     counter += 1
   }
 
