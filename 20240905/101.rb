@@ -22,7 +22,7 @@ end
 def propose(counter)
   output = document.getElementById("output")
 
-  output[:innerHTML] = "#{counter}: "
+  output[:innerHTML] = "#{counter}回目のプロポーズ: "
   if rand(100) <= 6.3
     output[:innerHTML] = "#{output[:innerHTML]}[1ok]"
   else
