@@ -21,6 +21,7 @@ def output_html(message)
 end
 
 def execute
+  clear_html()
   counter = 1
   render = ->() {
     # clearIntervalの仕方がわからん
