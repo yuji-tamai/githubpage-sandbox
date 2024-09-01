@@ -19,52 +19,58 @@ end
 # 仮交際成立 34.9%
 # 交際成立 9.6%
 # 結婚成立 59.8%
-def output_html
+def propose(counter)
   output = document.getElementById("output")
 
+  output[:innerHTML] = "#{counter}: "
   if rand(100) <= 6.3
     output[:innerHTML] = "#{output[:innerHTML]}[1ok]"
   else
     output[:innerHTML] = "#{output[:innerHTML]}[1ng]<br>"
-    return
+    return false
   end
 
   if rand(100) <= 34.0
     output[:innerHTML] = "#{output[:innerHTML]}[2on]"
   else
     output[:innerHTML] = "#{output[:innerHTML]}[2ng]<br>"
-    return
+    return false
   end
 
   if rand(100) <= 9.6
     output[:innerHTML] = "#{output[:innerHTML]}[3ok]"
   else
     output[:innerHTML] = "#{output[:innerHTML]}[3ng]<br>"
-    return
+    returnfalse
   end
 
   if rand(100) <= 59.8
     output[:innerHTML] = "#{output[:innerHTML]}[4ok]<br>"
   else
     output[:innerHTML] = "#{output[:innerHTML]}[4ng]<br>"
+    return false
   end
 
+  true
 end
 
 def execute
-  clear_html()
   counter = 1
   render = ->() {
     # clearIntervalの仕方がわからん
     return if counter > 101
 
+    clear_html()
     console_log "loop #{counter}"
-    output_html
-    counter += 1
+    if propose(counter)
+      counter = 999
+    else
+      counter += 1
+    end
   }
 
   # JavascriptのsetIntervalにrenderのprocを渡す
-  JS.global.call(:setInterval, JS.try_convert(render), 10)
+  JS.global.call(:setInterval, JS.try_convert(render), 100)
 end
 
 button = document.getElementById('executeButton')
