@@ -41,7 +41,7 @@ def propose(counter)
     output[:innerHTML] = "#{output[:innerHTML]}[3ok]"
   else
     output[:innerHTML] = "#{output[:innerHTML]}[3ng]<br>"
-    returnfalse
+    return false
   end
 
   if rand(100) <= 59.8
