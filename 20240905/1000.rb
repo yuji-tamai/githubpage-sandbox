@@ -1,4 +1,3 @@
-# 6) setIntervalに関数渡す
 require 'js'
 require "cgi"
 
@@ -76,8 +75,8 @@ def execute
 
   render = ->() {
     # clearIntervalの仕方がわからん
-    if counter > 101
-      if counter == 102
+    if counter > 1001
+      if counter == 1002
         output = document.getElementById("output")
         output[:innerHTML] = "#{$status.inspect}<br><br>#{output[:innerHTML]}"
         counter += 1
@@ -88,7 +87,7 @@ def execute
     #console_log "loop #{counter}"
     result = propose(counter)
     if result == 5
-      counter = 102
+      counter = 1002
     else
       counter += 1
     end
